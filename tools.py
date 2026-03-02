@@ -14,7 +14,7 @@ def get_weather(city: str) -> str:
     url = f"https://wttr.in/{city}?format=j1"
 
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=15)
         response.raise_for_status()
         data = response.json()
 
